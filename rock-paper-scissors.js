@@ -4,7 +4,7 @@ function getComputerChoice() {
     number = Math.floor(Math.random() * 3);
 
     /* make constant for computer choice */
-    const computerChoice;
+    let computerChoice;
 
     /* if random number is 0, choice is rock. 
        if random number is 1, choice is paper. 
@@ -23,3 +23,5 @@ function getComputerChoice() {
     return computerChoice
 }
 
+/* function to prompt user to make a rock paper sccisors choice */
+functio
