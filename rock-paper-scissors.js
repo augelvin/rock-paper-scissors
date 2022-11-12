@@ -16,12 +16,11 @@ function getComputerChoice() {
         computerChoice = 'paper';
     }
     else {
-        computerChoice = 'scissors'
+        computerChoice = 'scissors';
     }
 
     /* return computer choice */
-    return computerChoice
+    return computerChoice;
 }
 
-/* function to prompt user to make a rock paper sccisors choice */
-functio
+console.log(getComputerChoice());
