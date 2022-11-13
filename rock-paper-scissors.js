@@ -23,4 +23,29 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-console.log(getComputerChoice());
+/* finction to prompt user input */
+function getPlayerChoice() {
+    /* create a variable for valid answer */
+    let answer = false;
+
+    /* create a variable for player's choice */
+    let playerChoice;
+    
+    /* create a loop until user input a valid answer */
+    while (answer == false) {
+
+        /* prompt player to choose */
+        playerChoice = window.prompt('Choose rock, paper, or scissors');
+
+        /* convert input to all lower case */
+        playerChoice = playerChoice.toLowerCase()
+
+        /* if input is vaild change ansew to true */
+        if (playerChoice == 'rock' || playerChoice == 'paper' || playerChoice == 'scissors' ) {
+            answer = true;
+        }
+    }
+
+    /* return player choice */
+    return playerChoice;
+}
