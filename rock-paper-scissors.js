@@ -23,7 +23,7 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-/* finction to prompt user input */
+/* function to prompt user input */
 function getPlayerChoice() {
     /* create a variable for valid answer */
     let answer = false;
@@ -49,3 +49,29 @@ function getPlayerChoice() {
     /* return player choice */
     return playerChoice;
 }
+
+/* function to play a round */
+function playRound(playerChoice, computerChoice) {
+
+    /* win conditions */
+    win = (playerChoice == 'rock' && computerChoice == 'scissors' || 
+        playerChoice == 'paper' && computerChoice == 'rock' || 
+        playerChoice == 'scissors' && computerChoice == 'paper');
+
+    /* lose conditions */
+    lose = (playerChoice == 'rock' && computerChoice == 'paper' || 
+        playerChoice == 'paper' && computerChoice == 'scissors' || 
+        playerChoice == 'scissors' && computerChoice == 'rock');
+
+    /* output for each conditions */ 
+    if (playerChoice == computerChoice) {
+        return 'It\'s a tie. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' ties with ' + computerChoice + '.';
+    }
+    else if (win) {
+        return 'You win. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' beats ' + computerChoice + '.';
+    }
+    else if (lose) {
+        return 'You lose. ' + computerChoice[0].toUpperCase() + computerChoice.substring(1) + ' beats ' + playerChoice + '.';
+    }
+}
+
