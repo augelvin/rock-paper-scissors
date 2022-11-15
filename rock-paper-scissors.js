@@ -109,7 +109,10 @@ function game() {
         }
     }
 
-    if (playerPoints > computerPoints) {
+    if (playerPoints == computerPoints) {
+        return 'It\'s a tie!'
+    }
+    else if (playerPoints > computerPoints) {
         return 'You win!'
     }
     else {
