@@ -75,3 +75,44 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
+/* function to play a game of 5 rounds */
+function game() {
+
+    /* set initial points */
+    let playerPoints = 0;
+    let computerPoints = 0;
+
+    /* initiate playerChoice and computerChoice variables */
+    let playerChoice;
+    let computerChoice;
+
+    /* loop for 5 rounds */
+    for (let i = 0; i < 5; i++) {
+
+        /* generate computer choice */
+        computerChoice = getComputerChoice();
+
+        /* prompt user choice */
+        playerChoice = getPlayerChoice();
+
+        /* play a round */
+        round = playRound(playerChoice, computerChoice)
+
+        /* update points after each round */
+        if (round.includes('win')) {
+            playerPoints += 1;
+            console.log('Player = ' + playerPoints + ', Computer = ' + computerPoints)
+        }
+        else if (round.includes('lose')) {
+            computerPoints += 1;
+            console.log('Player = ' + playerPoints + ', Computer = ' + computerPoints)
+        }
+    }
+
+    if (playerPoints > computerPoints) {
+        return 'You win!'
+    }
+    else {
+        return 'You lose!'
+    }
+}
