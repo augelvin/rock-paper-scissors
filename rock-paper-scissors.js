@@ -106,6 +106,8 @@ function game() {
         else if (round.includes('lose')) {
             computerPoints += 1;
             console.log('Player = ' + playerPoints + ', Computer = ' + computerPoints)
+        } else {
+            console.log('Player = ' + playerPoints + ', Computer = ' + computerPoints)
         }
     }
 
