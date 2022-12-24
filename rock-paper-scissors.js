@@ -86,19 +86,19 @@ function game() {
     let playerChoice;
     let computerChoice;
 
-    /* loop for 5 rounds */
+    /* loop for 5 rounds 
     for (let i = 0; i < 5; i++) {
 
-        /* generate computer choice */
+        // generate computer choice 
         computerChoice = getComputerChoice();
 
-        /* prompt user choice */
+        // prompt user choice 
         playerChoice = getPlayerChoice();
 
-        /* play a round */
+        // play a round 
         round = playRound(playerChoice, computerChoice)
 
-        /* update points after each round */
+        // update points after each round
         if (round.includes('win')) {
             playerPoints += 1;
             console.log('Player = ' + playerPoints + ', Computer = ' + computerPoints)
@@ -109,7 +109,7 @@ function game() {
         } else {
             console.log('Player = ' + playerPoints + ', Computer = ' + computerPoints)
         }
-    }
+    } */
 
     if (playerPoints == computerPoints) {
         return 'It\'s a tie!'
