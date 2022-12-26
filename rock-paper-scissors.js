@@ -52,9 +52,6 @@ function playRound (playerChoice) {
         computerPoints += 1;
     }
 
-    // input text content to points div
-    points.textContent = 'Player: ' + playerPoints + ' Computer: ' + computerPoints;
-
     if (playerPoints == 5) {
         alert('You Won!');
         playerPoints = 0;
@@ -64,6 +61,9 @@ function playRound (playerChoice) {
         playerPoints = 0;
         computerPoints = 0;
     }
+
+    // input text content to points div
+    points.textContent = 'Player: ' + playerPoints + ' Computer: ' + computerPoints;
 }
 
 // set initial points
