@@ -38,15 +38,18 @@ function playRound (playerChoice) {
         playerChoice == 'paper' && computerChoice == 'scissors' || 
         playerChoice == 'scissors' && computerChoice == 'rock');
 
+    // grab the status div
+    let status = document.querySelector('.status');
+    
     // output for each conditions
     if (playerChoice == computerChoice) {
-        alert('It\'s a tie. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' ties with ' + computerChoice + '.');
+        status.textContent = 'It\'s a tie. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' ties with ' + computerChoice + '.';
     }
     else if (win) {
-        alert('You win. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' beats ' + computerChoice + '.');
+        status.textContent = 'You win. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' beats ' + computerChoice + '.';
     }
     else if (lose) {
-        alert('You lose. ' + computerChoice[0].toUpperCase() + computerChoice.substring(1) + ' beats ' + playerChoice + '.');
+        status.textContent = 'You lose. ' + computerChoice[0].toUpperCase() + computerChoice.substring(1) + ' beats ' + playerChoice + '.';
     }
 }
 
