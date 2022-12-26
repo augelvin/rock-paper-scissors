@@ -22,3 +22,41 @@ function getComputerChoice() {
     // return computer choice
     return computerChoice;
 }
+
+// function to play a round
+function playRound (playerChoice) {
+    
+    let computerChoice = getComputerChoice();
+
+    // win conditions
+    win = (playerChoice == 'rock' && computerChoice == 'scissors' || 
+        playerChoice == 'paper' && computerChoice == 'rock' || 
+        playerChoice == 'scissors' && computerChoice == 'paper');
+
+    // lose conditions
+    lose = (playerChoice == 'rock' && computerChoice == 'paper' || 
+        playerChoice == 'paper' && computerChoice == 'scissors' || 
+        playerChoice == 'scissors' && computerChoice == 'rock');
+
+    // output for each conditions
+    if (playerChoice == computerChoice) {
+        alert('It\'s a tie. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' ties with ' + computerChoice + '.');
+    }
+    else if (win) {
+        alert('You win. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' beats ' + computerChoice + '.');
+    }
+    else if (lose) {
+        alert('You lose. ' + computerChoice[0].toUpperCase() + computerChoice.substring(1) + ' beats ' + playerChoice + '.');
+    }
+}
+
+// grab all buttons
+const buttons = document.querySelectorAll('button')
+
+// iterate throug each button
+buttons.forEach((button) => {
+    // ada a 'click' listener for each button to play a round
+    button.addEventListener('click', () => {
+        playRound(button.id)
+    });
+});
