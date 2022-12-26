@@ -47,19 +47,41 @@ function playRound (playerChoice) {
     }
     else if (win) {
         status.textContent = 'You win. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' beats ' + computerChoice + '.';
+        playerPoints += 1;
     }
     else if (lose) {
         status.textContent = 'You lose. ' + computerChoice[0].toUpperCase() + computerChoice.substring(1) + ' beats ' + playerChoice + '.';
+        computerPoints += 1;
     }
 }
+
+// set initial points
+let playerPoints = 0;
+let computerPoints = 0;
 
 // grab all buttons
 const buttons = document.querySelectorAll('button')
 
-// iterate throug each button
+// iterate through each button
 buttons.forEach((button) => {
     // ada a 'click' listener for each button to play a round
     button.addEventListener('click', () => {
         playRound(button.id)
     });
 });
+
+// grab points div
+const points = document.querySelector('.points');
+
+points.textContent = 'Player: ' + playerPoints + ' Computer: ' + computerPoints;
+
+if (playerPoints == 5) {
+    alert('You Won!');
+    playerPoints = 0;
+    computerPoints = 0;
+} else if (computerPoints == 5) {
+    alert('You Lost!');
+    playerPoints = 0;
+    computerPoints = 0;
+}
+
