@@ -44,14 +44,25 @@ function playRound (playerChoice) {
     // output for each conditions
     if (playerChoice == computerChoice) {
         status.textContent = 'It\'s a tie. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' ties with ' + computerChoice + '.';
-    }
-    else if (win) {
+    } else if (win) {
         status.textContent = 'You win. ' + playerChoice[0].toUpperCase() + playerChoice.substring(1) + ' beats ' + computerChoice + '.';
         playerPoints += 1;
-    }
-    else if (lose) {
+    } else if (lose) {
         status.textContent = 'You lose. ' + computerChoice[0].toUpperCase() + computerChoice.substring(1) + ' beats ' + playerChoice + '.';
         computerPoints += 1;
+    }
+
+    // input text content to points div
+    points.textContent = 'Player: ' + playerPoints + ' Computer: ' + computerPoints;
+
+    if (playerPoints == 5) {
+        alert('You Won!');
+        playerPoints = 0;
+        computerPoints = 0;
+    } else if (computerPoints == 5) {
+        alert('You Lost!');
+        playerPoints = 0;
+        computerPoints = 0;
     }
 }
 
@@ -72,16 +83,4 @@ buttons.forEach((button) => {
 
 // grab points div
 const points = document.querySelector('.points');
-
-points.textContent = 'Player: ' + playerPoints + ' Computer: ' + computerPoints;
-
-if (playerPoints == 5) {
-    alert('You Won!');
-    playerPoints = 0;
-    computerPoints = 0;
-} else if (computerPoints == 5) {
-    alert('You Lost!');
-    playerPoints = 0;
-    computerPoints = 0;
-}
 
